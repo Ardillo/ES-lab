@@ -8,9 +8,9 @@ the help of a GIT repository.
 
 ## Making PDF
 Made a Makefile with the following options
- - all
+ - all:
    Generates the latex files
- - pdf
+ - pdf:
    Generates a PDF, and deletes all temporary files
- - clean
+ - clean:
    Deletes the resulting PDF and all temporary files
