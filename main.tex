@@ -2,7 +2,12 @@
 
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx,hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+%\usepackage[T1]{fontenc}
+
+\graphicspath{ {figures/}
+} 
 
 \title{XML in Atom}
 \author{Curran, T.; Maarse, M.; van Prooijen, J.}
@@ -13,7 +18,7 @@
 	\section{Introduction}
 	This is the place where the introduction should come 
 	\include{XQuery}
-	%\include{recursivemake}	
+	\include{recursivemake}	
 	\include{atom}
 	\bibliography{biblio}
 	\bibliographystyle{plain}
