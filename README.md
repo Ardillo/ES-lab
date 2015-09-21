@@ -6,3 +6,11 @@ the help of a GIT repository.
  - \<title>.tex   = seperate chapter files
  - biblio.bib = bibtex file for generating bibliography 
 
+## Making PDF
+Made a Makefile with the following options
+ - all:
+   Generates the latex files
+ - pdf:
+   Generates a PDF, and deletes all temporary files
+ - clean:
+   Deletes the resulting PDF and all temporary files
