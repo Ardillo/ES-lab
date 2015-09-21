@@ -1,8 +1,15 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\graphicspath{ {figures/}
+} 
+
 \chapter{Recursive Make Considered Harmful}
 
 \section{Introduction}
 
-This paper was written by Peter Miller of the Australian Organisation for Unix,
+\hyperref[This]{''http://aegis.sourceforge.net/auug97.pdf''} paper was written by Peter Miller of the Australian Organisation for Unix,
 Linux, and Open Source Professionals in 1997. It discusses the problem of 
 "unacceptable large" build times on large UNIX projects, even when make small 
 changes. The author attributes the problem to the use of recursive makes. Specifically,
@@ -10,9 +17,9 @@ the artificial partitioning of the build into separate subsets which leads to in
 make files.
 
 According to the author, the problem is not with Make itself, rather the input going into
-make (\textit{Garbage In Garbage Out}). 
+make - \textit{Garbage In Garbage Out}. 
 
-\section{Contents}\label
+
 \section{What is a Recursive Make?}
 
 Projects that make use of recursive makes use a hierarchy of direcetories containing 
@@ -24,14 +31,18 @@ each of the sub-directories and recursively invoke the \textit{make} program.
 
 This hierarchy can be nested arbitrarily deep, typically two- and three-level structures.
 
+%Include image of recursive makefile structure
+\includegraphics[width=3cm]{structure}
 \subsection{Problems}
-1. Difficult to get order of recursion into sub-directories correct - unstable and 
+\begin{enumerate}
+\item Difficult to get order of recursion into sub-directories correct - unstable and 
 often needs tweaking.
-2. Often necessary to do more than one pass over sub-directories - increases build times.
-3. Some dependency information is omitted to avoid unreasonable build times.
-4. Inter-directory dependencies often omitted or too hard to express, so Makefiles written to 
+\item Often necessary to do more than one pass over sub-directories - increases build times.
+\item Some dependency information is omitted to avoid unreasonable build times.
+\item Inter-directory dependencies often omitted or too hard to express, so Makefiles written to 
 \textit{over} build to ensure nothing is left out.
-5. Inaccurate dependencies lead to the product unable to build cleanly.
+\item Inaccurate dependencies lead to the product unable to build cleanly.
+\end{enumerate}
 
 \section{What "Make" Does and How It Works}
 
@@ -40,10 +51,13 @@ are decomposed into pair-wise ordered dependencies between files. Make takes the
 and determines how to build the given target. It does this by constructing a
 \textit{Directed Acyclic Graph} (DAG).
 
-An example project structure looks like this:
-[[INSERT IMAGES]]
+An example project structure:
+\includegraphics[width=3cm]{simpleproject}
 
-Object files are dependent on the include files (.h) even though source files (.c) do the including.
+Corresponding Directed Acyclic Graph:
+\includegraphics[width=3cm]{dag}
+
+Object files are dependent on the include files \textit{(.h)} even though source files \textit{(.c)} do the including.
 This is because if an include file changes, it is the object files that are out-of-date, not the 
 source files.
 
@@ -53,6 +67,9 @@ any of the lower files they depend upon are younger.
 
 Using recursive makes is problematic because it affects both phases: it causes make to construct an
 inaccurate DAG, and it forces make to traverse the DAG in an inappropriate order.
+
+Incomplete DAG from recursive make:
+\includegraphics[width=3cm]{incompletedag}
 
 Files are interdependent. Using make recursively means that files created for the next process whilst
 unaware of problems such as out-of-date. These out-of-date files are then used as input for later stages
@@ -67,7 +84,7 @@ It is not the recursion itself which is harmful, it is the crippled Makefiles wh
 in the recursion which are wrong.
 \end{quote}
 
-It may sound counter-intuitive to have a single Makefile, however the author says that by using ''include''
+It may sound counter-intuitive to have a single Makefile, however the author says that by using \textit{include}
 statements, the Makefile is instructed to suspend reading the current one and go to another before continuing.
 
 \section{Conclusion}
