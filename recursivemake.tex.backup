@@ -1,15 +1,10 @@
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[hidelinks]{hyperref}
-\usepackage{graphicx}
-\graphicspath{ {figures/}
-} 
+
 
 \chapter{Recursive Make Considered Harmful}
 
 \section{Introduction}
 
-\hyperref[This]{''http://aegis.sourceforge.net/auug97.pdf''} paper was written by Peter Miller of the Australian Organisation for Unix,
+This paper was written by Peter Miller of the Australian Organisation for Unix,
 Linux, and Open Source Professionals in 1997. It discusses the problem of 
 "unacceptable large" build times on large UNIX projects, even when make small 
 changes. The author attributes the problem to the use of recursive makes. Specifically,
@@ -31,8 +26,6 @@ each of the sub-directories and recursively invoke the \textit{make} program.
 
 This hierarchy can be nested arbitrarily deep, typically two- and three-level structures.
 
-%Include image of recursive makefile structure
-\includegraphics[width=3cm]{structure}
 \subsection{Problems}
 \begin{enumerate}
 \item Difficult to get order of recursion into sub-directories correct - unstable and 
@@ -51,11 +44,8 @@ are decomposed into pair-wise ordered dependencies between files. Make takes the
 and determines how to build the given target. It does this by constructing a
 \textit{Directed Acyclic Graph} (DAG).
 
-An example project structure:
-\includegraphics[width=3cm]{simpleproject}
-
-Corresponding Directed Acyclic Graph:
-\includegraphics[width=3cm]{dag}
+An example project structure looks like this:
+[[INSERT IMAGES]]
 
 Object files are dependent on the include files \textit{(.h)} even though source files \textit{(.c)} do the including.
 This is because if an include file changes, it is the object files that are out-of-date, not the 
@@ -67,9 +57,6 @@ any of the lower files they depend upon are younger.
 
 Using recursive makes is problematic because it affects both phases: it causes make to construct an
 inaccurate DAG, and it forces make to traverse the DAG in an inappropriate order.
-
-Incomplete DAG from recursive make:
-\includegraphics[width=3cm]{incompletedag}
 
 Files are interdependent. Using make recursively means that files created for the next process whilst
 unaware of problems such as out-of-date. These out-of-date files are then used as input for later stages
