@@ -1,8 +1,72 @@
-\section{First section}
-balalalala
-\subsection{alpha}
-\subsection{bravo}
-\subsubsection{charlie}
-this is some text
-\section{Second section}
-Some more text here\cite{test1}.
+\documentclass{report}
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{color}
+
+\begin{document}
+\section{Group Assignment: XQuery}
+ Group G2, seats 6-11, subject XQuery.\\
+ For the groups result look: \href{https://www.os3.nl/2015-2016/students/jeroen_van_prooijen/es/week36/g2_exercise_xquery}{here}.
+
+\subsection{Notes}
+\begin{itemize}
+\item XQuery is SQL for XML (\url{w3schools.com})
+\end{itemize}
+
+My task was to find information about the history and versions available on XQuery.
+
+\begin{itemize}
+\item XQuery 1.0 \hfill \\
+$\rightarrow$ \href{http://www.w3.org/TR/xquery/}{Recommendation} presented in December 2010.
+\item XQuery 3.0 \hfill \\
+$\rightarrow$ \href{http://www.w3.org/TR/xquery-30/}{Recommendation} presented in April 2014.
+\item XQuery 3.1 \hfill \\
+$\rightarrow$ \href{http://www.w3.org/TR/xquery-3/}{Candidate recommendation} in December 2014 \\ 
+$\rightarrow$ last \href{http://www.w3.org/TR/xquery-31-requirements/}{Group Note} is from August
+\end{itemize}
+
+\subsection{Online interpreter for Xquery}
+\begin{itemize}
+\item \url{http://www.w3schools.com/xsl/xquery_example.asp}
+\item \url{http://www.w3schools.com/xsl/xquery_flwor.asp}
+\end{itemize}
+
+And used the books.xml file, below: 
+
+\lstset{language=XML}
+\begin{lstlisting}
+<bookstore id="store">  
+  <book category="COOKING">
+    <title lang="en">Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <price>30.00</price>
+  </book>
+    <book category="CHILDREN">
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+    <year>2005</year>
+    <price>29.99</price>
+  </book>
+  <book category="WEB">
+    <title lang="en">XQuery Kick Start</title>
+    <author>James McGovern</author>
+    <author>Per Bothner</author>
+    <author>Kurt Cagle</author>
+    <author>James Linn</author>
+    <author>Vaidyanathan Nagarajan</author>
+    <year>2003</year>
+    <price>49.99</price>
+  </book>
+  <book category="WEB">
+    <title lang="en">Learning XML</title>
+    <author>Erik T. Ray</author>
+    <year>2003</year>
+    <price>39.95</price>
+  </book>
+</bookstore> 
+\end{lstlisting}
+
+\end{document}
