@@ -2,28 +2,36 @@
 
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
+% for hrefs and urls
 \usepackage[hidelinks]{hyperref}
-\usepackage{graphicx}
-%\usepackage[T1]{fontenc}
+% for code blocks
 \usepackage{listings}
+% for using maths or symbols
 \usepackage{amssymb}
+% for using coloring, used in code blocks
 \usepackage{color}
+%adding bibliography to TOC
+\usepackage[nottoc]{tocbibind}
+% for images
+\usepackage{graphicx}
+% image path
+\graphicspath{ {figures/} }
+% using images inline with text
+\usepackage{wrapfig}
+% some latex-fu for html-xml-css-js stuff
+\input{code_coloring}
 
-
-\graphicspath{ {figures/}
-} 
-
-\title{XML in Atom}
+\title{ES lab-6, \LaTeX\ group exercise G2}
 \author{Curran, T.; Maarse, M.; van Prooijen, J.}
 
 \begin{document}
 	\maketitle{}
 	\tableofcontents
-	\section{Introduction}
-	This is the place where the introduction should come 
+	\chapter{Introduction}
+	This document is the \LaTeX\ representation of the first group exercises of group G2, during the SNE course of 2015-2016. During the making of this document a steep learning curve was achieved. Thanks to the assistents and \href{https://en.wikibooks.org/wiki/LaTeX}{wikibooks.org}\cite{wikibooks_latex_home} we've made it to a good end.
 	\include{XQuery}
 	\include{recursivemake}	
 	\include{atom}
+	\bibliographystyle{plain}	
 	\bibliography{biblio}
-	\bibliographystyle{plain}
 \end{document}
