@@ -1,16 +1,183 @@
 %\documentclass{report}
-
+%
 %\usepackage{listings}
 %\usepackage{hyperref}
 %\usepackage{amssymb}
+%
+%\usepackage{bibtex}
+%
+%\usepackage{graphicx}
+%\graphicspath{ {figures/} }
+%\usepackage{wrapfig}
+%
 %\usepackage{color}
-
+%
+%
+%\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+%\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+%\definecolor{lightgray}{rgb}{0.95, 0.95, 0.95}
+%\definecolor{darkgray}{rgb}{0.4, 0.4, 0.4}
+%\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+%\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+%\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+%\definecolor{orange}{rgb}{1,0.45,0.13}      
+%\definecolor{olive}{rgb}{0.17,0.59,0.20}
+%\definecolor{brown}{rgb}{0.69,0.31,0.31}
+%\definecolor{purple}{rgb}{0.38,0.18,0.81}
+%\definecolor{lightblue}{rgb}{0.1,0.57,0.7}
+%\definecolor{lightred}{rgb}{1,0.4,0.5}
+%
+%\lstset{
+%  basicstyle=\footnotesize\ttfamily,
+%  columns=fullflexible,
+%  showstringspaces=false,
+%  commentstyle=\color{darkgray}\upshape
+%}
+%
+%\lstdefinestyle{code}{
+%  % line-numbers
+%  xleftmargin={0.75cm},
+%  numbers=left,
+%  stepnumber=1,
+%  firstnumber=1,
+%  numberfirstline=true,
+%}
+%
+%\lstdefinelanguage{XML}{
+%  morestring=[b]",
+%  morestring=[s]{>}{<},
+%  morecomment=[s]{<?}{?>},
+%  stringstyle=\color{black},
+%  identifierstyle=\color{darkblue},
+%  keywordstyle=\color{cyan},
+%  morekeywords={xmlns,version,type}% list your attributes here
+%}
+%
+%\lstdefinestyle{xml}{
+%  % line-numbers
+%  xleftmargin={0.75cm},
+%  numbers=left,
+%  stepnumber=1,
+%  firstnumber=1,
+%  numberfirstline=true,
+%  language=XML, 
+%  alsodigit={.:;},  
+%  tabsize=2,
+%  showtabs=false,
+%  showspaces=false,
+%  showstringspaces=false,
+%  extendedchars=true,
+%  breaklines=true,
+%}
+%
+%% CSS
+%\lstdefinelanguage{CSS}{
+%  keywords={color,background-image:,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width, transition:, transform:, transition-property, transition-duration, transition-timing-function}, 
+%  sensitive=true,
+%  morecomment=[l]{//},
+%  morecomment=[s]{/*}{*/},
+%  morestring=[b]',
+%  morestring=[b]",
+%  alsoletter={:},
+%  alsodigit={-}
+%}
+%
+%% JavaScript
+%\lstdefinelanguage{JavaScript}{
+%  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+%  morecomment=[s]{/*}{*/},
+%  morecomment=[l]//,
+%  morestring=[b]",
+%  morestring=[b]'
+%}
+%
+%\lstdefinelanguage{HTML5}{
+%  language=html,
+%  sensitive=true,   
+%  alsoletter={<>=-},    
+%  morecomment=[s]{<!-}{-->},
+%  tag=[s],
+%  otherkeywords={
+%  % General
+%  >,
+%  % Standard tags
+%    <!DOCTYPE,
+%  </html, <html, <head, <title, </title, <style, </style, <link, </head, <meta, />,
+%    % body
+%    </body, <body,
+%    % Divs
+%    </div, <div, </div>, 
+%    % Paragraphs
+%    </p, <p, </p>,
+%    % scripts
+%    </script, <script,
+%  % More tags...
+%  <canvas, /canvas>, <svg, <rect, <animateTransform, </rect>, </svg>, <video, <source, <iframe, </iframe>, </video>, <image, </image>, <header, </header, <article, </article
+%  },
+%  ndkeywords={
+%  % General
+%  =,
+%  % HTML attributes
+%  charset=, src=, id=, width=, height=, style=, type=, rel=, href=,
+%  % SVG attributes
+%  fill=, attributeName=, begin=, dur=, from=, to=, poster=, controls=, x=, y=, repeatCount=, xlink:href=,
+%  % properties
+%  margin:, padding:, background-image:, border:, top:, left:, position:, width:, height:, margin-top:, margin-bottom:, font-size:, line-height:,
+%    % CSS3 properties
+%  transform:, -moz-transform:, -webkit-transform:,
+%  animation:, -webkit-animation:,
+%  transition:,  transition-duration:, transition-property:, transition-timing-function:,
+%  }
+%}
+%
+%\lstdefinestyle{htmlcssjs} {%
+%  % General design
+%%  backgroundcolor=\color{editorGray},
+%  basicstyle={\footnotesize\ttfamily},   
+%  %frame=b,
+%  % line-numbers
+%  xleftmargin={0.75cm},
+%  numbers=left,
+%  stepnumber=1,
+%  firstnumber=1,
+%  numberfirstline=true, 
+%  % Code design
+%  identifierstyle=\color{black},
+%  keywordstyle=\color{blue}\bfseries,
+%  ndkeywordstyle=\color{editorGreen}\bfseries,
+%  stringstyle=\color{editorOcher}\ttfamily,
+%  commentstyle=\color{brown}\ttfamily,
+%  % Code
+%  language=HTML5,
+%  alsolanguage=JavaScript,
+%  alsodigit={.:;},  
+%  tabsize=2,
+%  showtabs=false,
+%  showspaces=false,
+%  showstringspaces=false,
+%  extendedchars=true,
+%  breaklines=true,
+%  % German umlauts
+%  literate=%
+%  {Ö}{{\"O}}1
+%  {Ä}{{\"A}}1
+%  {Ü}{{\"U}}1
+%  {ß}{{\ss}}1
+%  {ü}{{\"u}}1
+%  {ä}{{\"a}}1
+%  {ö}{{\"o}}1
+%}
 %\begin{document}
-\section{Group Assignment: XQuery}
- Group G2, seats 6-11, subject XQuery.\\
- For the groups result look: \href{https://www.os3.nl/2015-2016/students/jeroen_van_prooijen/es/week36/g2_exercise_xquery}{here}.
 
-\subsection{Notes}
+\chapter{The Quest For XQuery}
+Group G2, seats 6-11, subject XQuery.\\
+For the groups result look: \href{https://www.os3.nl/2015-2016/students/jeroen_van_prooijen/es/week36/g2_exercise_xquery}{here}.\\
+For the page describing this document look: \href{https://www.os3.nl/2015-2016/students/jeroen_van_prooijen/es/week36#group_assignmentxquery}{here}.\\
+
+This \LaTeX\ chapter is made by Jeroen van Prooijen. Making this \LaTeX\ based representation of our wiki I've used overleaf for the color encoding of html and xml \cite{overleaf}.
+To show that also labeling works, here a label of the image I've used. Figure: \ref{fig:w3schools_logo} shows the w3schools logo.
+
+\section{Notes}
 \begin{itemize}
 \item XQuery is SQL for XML (\url{w3schools.com})
 \end{itemize}
@@ -27,16 +194,26 @@ $\rightarrow$ \href{http://www.w3.org/TR/xquery-3/}{Candidate recommendation} in
 $\rightarrow$ last \href{http://www.w3.org/TR/xquery-31-requirements/}{Group Note} is from August
 \end{itemize}
 
-\subsection{Online interpreter for Xquery}
+\section{Online interpreter for Xquery}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{w3schools.jpg}
+\caption{w3schools logo\cite{w3schools}}
+\label{fig:w3schools_logo}
+\end{figure}
+
+I've used the examples on:
 \begin{itemize}
 \item \url{http://www.w3schools.com/xsl/xquery_example.asp}
 \item \url{http://www.w3schools.com/xsl/xquery_flwor.asp}
 \end{itemize}
 
+
+
 And used the books.xml file, below: 
 
-\lstset{language=XML}
-\begin{lstlisting}
+\begin{lstlisting}[style=xml, frame=single, caption={books.xml}]
 <bookstore id="store">  
   <book category="COOKING">
     <title lang="en">Everyday Italian</title>
@@ -67,6 +244,79 @@ And used the books.xml file, below:
     <price>39.95</price>
   </book>
 </bookstore> 
+\end{lstlisting}
+
+\subsection{Simple query}
+To make an example on a online interpreter, with the query:
+\begin{lstlisting}[frame=single, style=code, caption={simple query}]
+xquery version "1.0";
+ 
+for $x in id("store")/book
+where $x/price>30
+order by $x/title
+return $x/title
+\end{lstlisting}
+\textbf{Result}
+\begin{lstlisting}[frame=single, caption={result}]
+Learning XML
+XQuery Kick Start
+\end{lstlisting}
+\href{http://videlibri.sourceforge.net/cgi-bin/xidelcgi?&data=%3Cbookstore%20id%3D%22store%22%3E%20%20%0A%20%20%3Cbook%20category%3D%22COOKING%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EEveryday%20Italian%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EGiada%20De%20Laurentiis%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2005%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E30.00%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%20%20%3Cbook%20category%3D%22CHILDREN%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EHarry%20Potter%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EJ%20K.%20Rowling%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2005%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E29.99%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%3Cbook%20category%3D%22WEB%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EXQuery%20Kick%20Start%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EJames%20McGovern%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EPer%20Bothner%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EKurt%20Cagle%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EJames%20Linn%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EVaidyanathan%20Nagarajan%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2003%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E49.99%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%3Cbook%20category%3D%22WEB%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3ELearning%20XML%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EErik%20T.%20Ray%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2003%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E39.95%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%3C%2Fbookstore%3E%20%0A&=%3Cbookstore%20id%3D%22store%22%3E%20%20%0A%20%20%3Cbook%20category%3D%22COOKING%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EEveryday%20Italian%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EGiada%20De%20Laurentiis%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2005%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E30.00%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%20%20%3Cbook%20category%3D%22CHILDREN%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EHarry%20Potter%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EJ%20K.%20Rowling%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2005%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E29.99%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%3Cbook%20category%3D%22WEB%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EXQuery%20Kick%20Start%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EJames%20McGovern%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EPer%20Bothner%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EKurt%20Cagle%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EJames%20Linn%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EVaidyanathan%20Nagarajan%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2003%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E49.99%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%3Cbook%20category%3D%22WEB%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3ELearning%20XML%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EErik%20T.%20Ray%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2003%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E39.95%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%3C%2Fbookstore%3E%20&extract=xquery%20version%20%221.0%22%3B%0A%0Afor%20%24x%20in%20id(%22store%22)%2Fbook%0Awhere%20%24x%2Fprice%3E30%0Aorder%20by%20%24x%2Ftitle%0Areturn%20%24x%2Ftitle%0A%0A%0A&=&input-format=xml&printed-node-format=text&output-format=adhoc&compatibility=Enable%20all%20extensions&dot-notation=unambiguous&extract-kind=xquery1}{This} is the url to the online interpreter with the XML and query from above.
+
+\subsection{Functions in query}
+It is also possible to make functions:
+\begin{lstlisting}[frame=single, style=code, caption={query 2}]
+xquery version "1.0";
+ 
+ 
+declare function local:search($doc as element()){
+ for $x in $doc/book
+  where $x/price>30
+   order by $x/title
+  return $x/title
+};
+ 
+local:search(id("store"))
+\end{lstlisting}
+\textbf{Result}
+\begin{lstlisting}[frame=single, caption={result}]
+Learning XML
+XQuery Kick Start
+\end{lstlisting}
+A working result can bee seen \href{http://videlibri.sourceforge.net/cgi-bin/xidelcgi?&data=%3Cbookstore%20id%3D%22store%22%3E%20%20%0A%20%20%3Cbook%20category%3D%22COOKING%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EEveryday%20Italian%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EGiada%20De%20Laurentiis%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2005%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E30.00%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%20%20%3Cbook%20category%3D%22CHILDREN%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EHarry%20Potter%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EJ%20K.%20Rowling%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2005%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E29.99%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%3Cbook%20category%3D%22WEB%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3EXQuery%20Kick%20Start%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EJames%20McGovern%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EPer%20Bothner%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EKurt%20Cagle%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EJames%20Linn%3C%2Fauthor%3E%0A%20%20%20%20%3Cauthor%3EVaidyanathan%20Nagarajan%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2003%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E49.99%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%20%20%3Cbook%20category%3D%22WEB%22%3E%0A%20%20%20%20%3Ctitle%20lang%3D%22en%22%3ELearning%20XML%3C%2Ftitle%3E%0A%20%20%20%20%3Cauthor%3EErik%20T.%20Ray%3C%2Fauthor%3E%0A%20%20%20%20%3Cyear%3E2003%3C%2Fyear%3E%0A%20%20%20%20%3Cprice%3E39.95%3C%2Fprice%3E%0A%20%20%3C%2Fbook%3E%0A%3C%2Fbookstore%3E%20%0A&=&extract=xquery%20version%20%221.0%22%3B%0A%0A%0Adeclare%20function%20local%3Asearch(%24doc%20as%20element())%7B%0A%20for%20%24x%20in%20%24doc%2Fbook%0A%20%20where%20%24x%2Fprice%3E30%0A%20%20%20order%20by%20%24x%2Ftitle%0A%20%20return%20%24x%2Ftitle%0A%7D%3B%0A%0Alocal%3Asearch(id(%22store%22))&=&input-format=xml&printed-node-format=text&output-format=adhoc&compatibility=Enable%20all%20extensions&dot-notation=unambiguous&extract-kind=xquery1}{here}.
+
+\subsection{HTML formatted output}
+Or to use HTML formatted output
+\begin{lstlisting}[frame=single, style=htmlcssjs, caption={query with HTML output}]
+xquery version "1.0";
+<html>
+ <head>
+ </head>
+ <body>
+    <ul>
+    {
+      for $x in id("store")/book
+      where $x/price>30
+      order by $x/title
+      return <li>{$x/title}</li>
+    }
+    </ul>
+  </body>
+</html>
+\end{lstlisting}
+\textbf{Result}
+\begin{lstlisting}[frame=single, style=htmlcssjs, caption={result}]
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+ <body>
+    <ul>
+      <li><title lang="en">Learning XML</title></li>
+      <li><title lang="en">XQuery Kick Start</title></li>
+    </ul>
+  </body>
+</html>
 \end{lstlisting}
 
 %\end{document}
