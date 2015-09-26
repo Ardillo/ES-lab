@@ -15,7 +15,7 @@ gen_pdf:
 pdf: gen_pdf cleantmp
 
 cleantmp:
-	rm -f *.ps *.log *.aux *.out *.dvi *.bbl *.blg *.toc *.gz
+	rm -f *.ps *.log *.aux *.out *.dvi *.bbl *.blg *.toc *.gz *.lof
 
 cleanpdf:
 	rm -f *.pdf
