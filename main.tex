@@ -2,14 +2,21 @@
 
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
+% for using coloring, used in code blocks and linking
+\usepackage{color}
 % for hrefs and urls
 \usepackage[hidelinks]{hyperref}
+\hypersetup{
+	hidelinks = true,
+	colorlinks = true,
+	citecolor = darkgray,
+	linkcolor = black,
+	urlcolor = blue
+}
 % for code blocks
 \usepackage{listings}
 % for using maths or symbols
 \usepackage{amssymb}
-% for using coloring, used in code blocks
-\usepackage{color}
 %adding bibliography to TOC
 \usepackage[nottoc]{tocbibind}
 % for images
@@ -35,4 +42,5 @@
 	\include{G2}
 	\bibliographystyle{plain}	
 	\bibliography{biblio}
+	\listoffigures
 \end{document}
