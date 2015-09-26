@@ -6,8 +6,55 @@ Group G2, seats 6-11,
 group effort\\
 After watching \href{https://www.youtube.com/watch?v=4XpnKHJAok8}{Tech Talk: Linus Torvalds on git} we made some notes.
 
-\subsection{Notes}
-balalablabab
+\subsection{Notes Jeroen}
+bitkeeper only commercial software which is distributed (around 14 May 2007).
+GIT and mercurial are distributed as well.
+
+GIT is fully distributed, every download and working is it's own branch (~15:15 min).
+This is a different model which is far more stable and error proof than one central head.
+
+Kernel acceptance is done by network-of-trust (~27:30 min). That's the way that people pull 
+updates from each other, only if they trust them. And some are trusted by Linus so will some 
+updates eventually come in the kernel.
+
+GIT is focused on easy merging (~35:10 min). If a developer has made changes and the merge 
+on a higher level has to many merge conflicts. A developer with knowledge of the code and 
+expertise can execute it as well just as easy. 
+
+Question about central version control system is cheaper and easier for small projects 
+(~38 min). GIT reserves network traffic because of local branching. Naming branches in central 
+based system causes more overhead than an distributed system.
+
+GIT doesn't track a separate file, but the whole project as one (~44:15 min). Searching a 
+specific file it will first find the global environment and search for file. This is a bit 
+slower than other systems by the way GIT works.
+
+In GIT it is possible to (~48:35 min) make a backbone GIT project and refer to other GIT 
+projects. It is also possible to extract certain files of older branches.
+
+Again some explanation that special attention was spend of the development of merging.
+(~50:39 min). The system of branching works only well if merging is going well. If merging 
+is an issue than branching is a bad decision.
+
+GIT calculates a diff stat after a merge(~54 min). This gives information about the parts 
+that have changed since the last merge.
+
+GIT guarantees that unwanted changes (disk errors or whatever) are tracked and warned 
+(~65 min). GIT uses SHA-1 but not in a security application but for keeping signatures of 
+files. Applied for trusting data.
+
+The development got hacked at bitkeeper (~59:10 min). When that happens you will pay 
+attention to detect changes in codes.
+
+Again a part not about tracking separate files but a overview of the whole(~1:03:17 min).
+
+Code is tracked across files. Again an example of tracking with a greater overview and not 
+in file level (~1:08:00 min). GIT can tell which code lines come from a file a couple of 
+years ago.
+
+source: \href{https://www.os3.nl/2015-2016/students/jeroen_van_prooijen/es/week39#youtube}{Wiki, Jeroen van Prooijen}
+
+
 
 
 \section{Youtube movie unknown}
@@ -19,7 +66,7 @@ balalablabab
   \includegraphics[width=0.5\textwidth]{error_youtube.jpg}
  \end{center}
  \vspace{-20pt}
- \caption{screenshot}
+ \caption{screenshot youtube error}
  \vspace{-10pt}
 \label{fig:error_youtube}
 \end{wrapfigure}
