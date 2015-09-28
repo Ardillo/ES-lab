@@ -1,12 +1,8 @@
-\chapter{Group effort}
+\chapter{Linus Torvalds on Git}
 
-Group G2, seats 6-11,
+After watching \href{https://www.youtube.com/watch?v=4XpnKHJAok8}{Tech Talk: Linus Torvalds on git} each team member wrote down some notes.
 
-\section{Youtube movie Linus Torvalds}
-group effort\\
-After watching \href{https://www.youtube.com/watch?v=4XpnKHJAok8}{Tech Talk: Linus Torvalds on git} we made some notes.
-
-\subsection{Notes Jeroen}
+\section{Notes Jeroen}
 bitkeeper only commercial software which is distributed (around 14 May 2007).
 GIT and mercurial are distributed as well.
 
@@ -52,12 +48,31 @@ Code is tracked across files. Again an example of tracking with a greater overvi
 in file level (~1:08:00 min). GIT can tell which code lines come from a file a couple of 
 years ago.
 
-source: \href{https://www.os3.nl/2015-2016/students/jeroen_van_prooijen/es/week39#youtube}{Wiki, Jeroen van Prooijen}
+\vspace{2mm}
 
+Source: \href{https://www.os3.nl/2015-2016/students/jeroen_van_prooijen/es/week39#youtube}{Wiki, Jeroen van Prooijen}
 
+\section{Notes Mike}
+The video mainly serves as basic introduction to Git, highlighting the thinking process and design goals. During the talk, Torvalds focusses on the following benefits/features:
 
+\begin{itemize}
+\item Continue work offline with full functionality
+\item Every user has a branch
+\item No commit access to a central repository (less politics, more development)
+\item Provides concurrent dev/test/release cycles because every team uses it's own repository
+\item"Security" relies on network of trust between developers
+\item Easy branching/merging of large projects
+\end{itemize}
 
-\section{Youtube movie unknown}
+Answers to questions that were asked during the talk were all based on the features above.
+
+\vspace{2mm}
+
+Source: \href{https://www.os3.nl/2015-2016/students/mike_maarse/es/es_ga_wk39_2}{Personal wiki, Mike Maarse}
+
+\chapter{Latex vs. MS Word}
+
+\section{Microsoft Word or LateX?}
 \textbf{by Jeroen van Prooijen}\\
 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -75,10 +90,30 @@ I tried to watch the following youtube movie: \url{https://www.youtube.com/watch
 but it could not be found, see image \ref{fig:error_youtube}. For the placing the image \ref{fig:error_youtube} and wrapping this
 text around it I used a explanation on Wikibooks.org\cite{wikibooks_figures}
 
-\newpage
-
 \section{LaTeX vs Word}
 \textbf{by Mike Maarse}\\
+
+This section summarizes the information found on the provided web links to oestrem.com \cite{oestrem} and openwetware.org \cite{openwetware}.
+
+\vspace{2mm}
+
+Personal note: The information on these page date back to 2007 \cite{oestrem} and 2009 \cite{openwetware}. In the meantime both MS Word and Latex have continued development. It would be interesting to see if the comparisons made still hold up...
+
+\subsection{Things Twice - Latex vs. Word vs. Writer}
+Although writing \LaTeX documents could be considered "coding", the typesetter offers many benefits over MS Word and LibreOffice Writer. It may look intimidating at first because \LaTeX definitely isn't WYSIWYG. It is when rendering pages that the true power of \LaTeX becomes clear to see as the document output is very consistent, even with large text files.
+
+In Word and Writer it takes a lot of effort to space either text or figures correctly and it can sometimes mess up the entire document. Not the case with \LaTeX.
+
+One of the best features of \LaTeX is that it provides a solid set of defaults and Word doesn't. This saves the user a lot of work in the long run.
+
+\subsection{OpenWetWare - Word vs. Latex}
+The choice of wether a user picks Word or \LaTeX should be based on the task at hand. For a quick write up Word will suffice but for large text files, especially with scientific content, \LaTeX is the better choice.
+
+Main drawbacks of Word compared to Latex are lack of scientific features, the price (naturally) and slow speed when handling large documents.
+
+If we use a large text file example, the difference between the two typesetters is most evident when finishing a report. Word most likely will prove troublesome in getting the details (e.g. item numbering and TOC) right without messing up formatting. This is where \LaTeX shines with it's powerful automated routines.
+
+To speed things up with Latex even more, use document templates.
 
 \section{Stackexchange links}
 \textbf{by Tom Curran}\\
